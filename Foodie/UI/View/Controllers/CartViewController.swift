@@ -1,0 +1,52 @@
+//
+//  CartViewController.swift
+//  Foodie
+//
+//  Created by Sedat on 15.12.2023.
+//
+
+import UIKit
+import RxSwift
+
+//MARK: Sepet Ekranı özellikleri
+
+class CartViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cartTotalLabel: UILabel! //sepetteki toplam fiyat
+    let viewModel = CartViewModel() //CartViewModel'a köprü
+    var foodList = [CartFoods]() //CartFoods'a köprü
+    var totalPrice = 0 //
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        _ = viewModel.foodList.subscribe(onNext: { list in //bir arkaplan iş parçacığı var yani yemek listemin yüklenmesini istiyorum
+            self.foodList = list
+            DispatchQueue.main.async {
+                self.tableView.reloadData() //hata ne olursa olsun içerikleri gönder reloadData()
+            }
+        })
+        _ = viewModel.totalPrice.subscribe(onNext: { total in //bir arkaplan iş parçacığı var toplam fiyatın listemin yüklenmesini istiyorum
+            self.totalPrice = total
+            DispatchQueue.main.async {
+                self.cartTotalLabel.text = "\(String(self.totalPrice)) ₺" //hata ne olursa olsun içerikleri gönder reloadData()
+            }
+        })
+    }
+    override func viewWillAppear(_ animated: Bool) { //kullanıcı adına göre yemekleri getir
+        viewModel.bringCartFoods(kullanici_adi: "resedat")
+    }
+    
+    @IBAction func satinAlPressed(_ sender: UIButton) { //Satın Al butonu tıklanması ve uyarılar
+        let alert = UIAlertController(title: "Satın Alma", message: "Ürünler başarıyla sipariş verildi. En kısa sürede kuryemiz tarafından aranacaksınız, iyi günler.", preferredStyle: .alert)
+        let okeyAction = UIAlertAction(title: "Tamam", style: .cancel){ _ in
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "CustomTabBarViewController") as! CustomTabBarViewController
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .flipHorizontal
+            self.present(controller, animated: true, completion: nil)
+        }
+        alert.addAction(okeyAction)
+        self.present(alert, animated: true)
+    }
+}
