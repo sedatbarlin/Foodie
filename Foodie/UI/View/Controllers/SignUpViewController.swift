@@ -21,9 +21,12 @@ final class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboard()
-        signUpButton.tintColor = UIColor(red: 113/255, green: 156/255, blue: 111/255, alpha: 1)
+        configureButton()
     }
     override func viewWillAppear(_ animated: Bool) {
+        configureButton()
+    }
+    private func configureButton(){
         signUpButton.tintColor = UIColor(red: 113/255, green: 156/255, blue: 111/255, alpha: 1)
     }
     private func hideKeyboard() { //GestureRecognizer sayesinde ekranda boş bir yerin tıklanmasıyla klavye gizlemesi

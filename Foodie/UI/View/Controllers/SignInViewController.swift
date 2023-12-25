@@ -20,10 +20,13 @@ final class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        signInButton.tintColor = UIColor(red: 113/255, green: 156/255, blue: 111/255, alpha: 1)
         hideKeyboard()
+        configureButton()
     }
     override func viewWillAppear(_ animated: Bool) {
+        configureButton()
+    }
+    private func configureButton(){
         signInButton.tintColor = UIColor(red: 113/255, green: 156/255, blue: 111/255, alpha: 1)
     }
     

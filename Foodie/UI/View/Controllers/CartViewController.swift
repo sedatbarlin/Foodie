@@ -19,14 +19,24 @@ final class CartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTableView()
+        setFoodList()
+        setTotalPrice()
+    }
+    
+    private func setTableView(){
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    private func setFoodList(){
         _ = viewModel.foodList.subscribe(onNext: { list in //bir arkaplan iş parçacığı var yani yemek listemin yüklenmesini istiyorum
             self.foodList = list
             DispatchQueue.main.async {
                 self.tableView.reloadData() //hata ne olursa olsun içerikleri gönder reloadData()
             }
         })
+    }
+    private func setTotalPrice(){
         _ = viewModel.totalPrice.subscribe(onNext: { total in //bir arkaplan iş parçacığı var toplam fiyatın listemin yüklenmesini istiyorum
             self.totalPrice = total
             DispatchQueue.main.async {
@@ -34,6 +44,7 @@ final class CartViewController: UIViewController {
             }
         })
     }
+    
     override func viewWillAppear(_ animated: Bool) { //kullanıcı adına göre yemekleri getir
         viewModel.bringCartFoods(kullanici_adi: "resedat")
     }

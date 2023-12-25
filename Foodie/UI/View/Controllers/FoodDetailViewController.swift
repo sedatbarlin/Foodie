@@ -22,12 +22,19 @@ final class FoodDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setFoodName()
+        setPriceAndPiece()
+    }
+    
+    private func setFoodName(){
         if let f = food {
             nameLabel.text = f.yemek_adi
             if let url = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(f.yemek_resim_adi)") {
                 imageView.kf.setImage(with: url) //kf: KingFisher'dan nesne
             }
         }
+    }
+    private func setPriceAndPiece(){
         pieceLabel.text = String(piece)
         totalPriceLabel.text = "\(String(piece * Int(food!.yemek_fiyat)!)) ₺"
     }

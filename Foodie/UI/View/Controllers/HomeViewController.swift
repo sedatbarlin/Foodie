@@ -22,18 +22,17 @@ final class HomeViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setCollectionView()
+        configureCollectionView()
+        setSearchBar()
+        setViewModel()
+    }
+    
+    private func setCollectionView(){
         collectionView.dataSource = self
         collectionView.delegate = self
-        searchBar.delegate = self
-        collectionViewCell.cartButton?.tintColor = UIColor(red: 113/255, green: 156/255, blue: 111/255, alpha: 1) //button
-        
-        _ = viewModel.foodList.subscribe(onNext: { list in //bir arkaplan iş parçacığı var yani yemek listemin yüklenmesini istiyorum
-            self.foodList = list
-            DispatchQueue.main.async {
-                self.collectionView.reloadData() //hata ne olursa olsun içerikleri gönder reloadData()
-            }
-        })
-        
+    }
+    private func configureCollectionView(){
         let collectionDesign = UICollectionViewFlowLayout() //Anasayfadaki collectionview dizaynı ölçüleri
         collectionDesign.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         collectionDesign.minimumLineSpacing = 10
@@ -42,12 +41,27 @@ final class HomeViewController: UIViewController{
         let cellWidth = (screenWidth - 40) / 2
         collectionDesign.itemSize = CGSize(width: cellWidth, height: cellWidth * 1.6)
         collectionView.collectionViewLayout = collectionDesign
+        configureButton() //button
+    }
+    private func setSearchBar(){
+        searchBar.delegate = self
+    }
+    private func setViewModel(){
+        _ = viewModel.foodList.subscribe(onNext: { list in //bir arkaplan iş parçacığı var yani yemek listemin yüklenmesini istiyorum
+            self.foodList = list
+            DispatchQueue.main.async {
+                self.collectionView.reloadData() //hata ne olursa olsun içerikleri gönder reloadData()
+            }
+        })
+    }
+    private func configureButton(){
+        collectionViewCell.cartButton?.tintColor = UIColor(red: 113/255, green: 156/255, blue: 111/255, alpha: 1)
     }
     
     override func viewWillAppear(_ animated: Bool) { //segment kontrolüm ve button rengim
         viewModel.loadFoods()
         segmentedControl.selectedSegmentIndex = 0
-        collectionViewCell.cartButton?.tintColor = UIColor(red: 113/255, green: 156/255, blue: 111/255, alpha: 1)
+        configureButton()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //Detay ekranında görüntüleme

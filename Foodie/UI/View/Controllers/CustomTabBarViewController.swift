@@ -21,12 +21,17 @@ final class CustomTabBarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Foodie"
-        bottomTabView?.layer.cornerRadius = (bottomTabView?.frame.size.height ?? 0.0) / 2.0
-        handleSelectedViews(current: 0)
+        callHome()
+        configureTabView()
+    }
+    private func callHome(){
         let controller = main.instantiateViewController(withIdentifier: String(describing: HomeViewController.self))
         handleConstraint(controller)
     }
-    
+    private func configureTabView(){
+        bottomTabView?.layer.cornerRadius = (bottomTabView?.frame.size.height ?? 0.0) / 2.0
+        handleSelectedViews(current: 0)
+    }
     @IBAction private func tabTapped(_ sender: UIButton) { //Tabbar'da bulunan 3 öğenin tıklanma özellikleri
         var controller: UIViewController!
         let tag = sender.tag

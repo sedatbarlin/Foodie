@@ -17,8 +17,15 @@ final class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTableView()
+        setProfileLabel()
+    }
+    
+    private func setTableView(){
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    private func setProfileLabel(){
         if let username = viewModel.bringUserName() {
             nameLabel.text = "Merhaba " + username //Profil sayfasında email'deki ismin görünmesi
         }
