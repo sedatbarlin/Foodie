@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Users { //Codable: JSON cevabını liste olarak alma (özel model)
+final class Users { //Codable: JSON cevabını liste olarak alma (özel model)
     let email: String
     let password: String
     

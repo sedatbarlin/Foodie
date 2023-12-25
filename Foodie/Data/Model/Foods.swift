@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Foods: Codable{ //Codable: JSON cevabını liste olarak alma (özel model)
+final class Foods: Codable{ //Codable: JSON cevabını liste olarak alma (özel model)
     let yemek_id: String
     let yemek_adi: String
     let yemek_resim_adi: String

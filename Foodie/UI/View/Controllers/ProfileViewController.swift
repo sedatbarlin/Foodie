@@ -10,9 +10,9 @@ import FirebaseAuth
 
 //MARK: Kullanıcı profil ekranı özellikleri ve alert'lar
 
-class ProfileViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var nameLabel: UILabel! //Profil'de üstte görüntülenecek label
+final class ProfileViewController: UIViewController {
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var nameLabel: UILabel! //Profil'de üstte görüntülenecek label
     let viewModel = ProfileViewModel() //ProfileViewModel'a köprü çünkü kullanıcı bilgisini ordan getirecek
     
     override func viewDidLoad() {

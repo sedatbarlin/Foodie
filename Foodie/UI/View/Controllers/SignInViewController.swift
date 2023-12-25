@@ -10,10 +10,10 @@ import FirebaseAuth
 
 //MARK: Kullanıcı girişi için Auth kullanılması (check) işlemi ve kayıt ekranına yönlendirme
 
-class SignInViewController: UIViewController {
-    @IBOutlet weak var mailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var signInButton: UIButton!
+final class SignInViewController: UIViewController {
+    @IBOutlet private weak var mailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var signInButton: UIButton!
     //var viewModel = SignInViewModel() //SignInViewModel'dan
     private let repository = FoodsDaoRepository() //Repo'dan köprü sayesinde giriş işlemi yapılması
     var iconClick = true
@@ -27,7 +27,7 @@ class SignInViewController: UIViewController {
         signInButton.tintColor = UIColor(red: 113/255, green: 156/255, blue: 111/255, alpha: 1)
     }
     
-    @IBAction func showPasswordButtonAction(_ sender: Any) {
+    @IBAction private func showPasswordButtonAction(_ sender: Any) {
         if iconClick{
             passwordTextField.isSecureTextEntry = false
         } else{
@@ -36,17 +36,16 @@ class SignInViewController: UIViewController {
         iconClick = !iconClick
     }
     
-    
-    func hideKeyboard() { //GestureRecognizer sayesinde ekranda boş bir yerin tıklanmasıyla klavye gizlemesi
+    private func hideKeyboard() { //GestureRecognizer sayesinde ekranda boş bir yerin tıklanmasıyla klavye gizlemesi
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-    @objc func closeKeyboard() {
+    @objc private func closeKeyboard() {
         view.endEditing(true)
     }
     
-    @IBAction func signInButtonAction(_ sender: UIButton) { //giriş butonu kullanıcı check işlemi ve uygulamaya yönlendirme
+    @IBAction private func signInButtonAction(_ sender: UIButton) { //giriş butonu kullanıcı check işlemi ve uygulamaya yönlendirme
         if let email = mailTextField.text, let password = passwordTextField.text {
             repository.signIn(email: email, password: password) { error in
                 if error != nil {
@@ -70,7 +69,7 @@ class SignInViewController: UIViewController {
         }
     }
 
-    @IBAction func goToSignUpButton(_ sender: UIButton) { //kayıt ol ekranına yönlendirme
+    @IBAction private func goToSignUpButton(_ sender: UIButton) { //kayıt ol ekranına yönlendirme
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
         controller.modalPresentationStyle = .fullScreen
         controller.modalTransitionStyle = .flipHorizontal

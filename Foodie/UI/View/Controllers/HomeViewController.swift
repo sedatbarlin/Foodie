@@ -10,10 +10,10 @@ import Kingfisher
 
 //MARK: Anasayfadaki öğelerin bağlanması ve köprülerin kurulması
 
-class HomeViewController: UIViewController{
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var collectionView: UICollectionView!
+final class HomeViewController: UIViewController{
+    @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var segmentedControl: UISegmentedControl!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     let viewModel = HomeViewModel() //HomeViewModel'a köprü
     let detailViewModel = FoodDetailViewModel() //FoodDetailViewModel'a köprü
@@ -59,7 +59,7 @@ class HomeViewController: UIViewController{
         }
     }
     
-    @IBAction func categoryControl(_ sender: UISegmentedControl) { //SegmentControl sayesinde ürünlerin listelenmesi
+    @IBAction private func categoryControl(_ sender: UISegmentedControl) { //SegmentControl sayesinde ürünlerin listelenmesi
         let selectedIndex = sender.selectedSegmentIndex
         switch selectedIndex{
         case 0: viewModel.loadFoods()

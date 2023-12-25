@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FoodsResponse: Codable{ //Codable: JSON cevabını liste olarak alma
+final class FoodsResponse: Codable{ //Codable: JSON cevabını liste olarak alma
     var yemekler: [Foods]?
     var success :Int?
 }

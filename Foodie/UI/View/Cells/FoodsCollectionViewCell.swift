@@ -9,7 +9,7 @@ import UIKit
 
 //MARK: Anasayfa collectionview'da listelenen öğeler ve sepete ekleme butonu
 
-class FoodsCollectionViewCell: UICollectionViewCell {
+final class FoodsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!

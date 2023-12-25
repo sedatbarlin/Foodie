@@ -10,11 +10,11 @@ import Kingfisher
 
 //MARK: Anasayfa'da üzerine basılınca açılan Detay ekranının özellikleri
 
-class FoodDetailViewController: UIViewController {
-    @IBOutlet weak var imageView: UIImageView! //yemek resmi
-    @IBOutlet weak var pieceLabel: UILabel! //yemek adedi
-    @IBOutlet weak var nameLabel: UILabel! //yemek ismi
-    @IBOutlet weak var totalPriceLabel: UILabel! //toplam fiyat
+final class FoodDetailViewController: UIViewController {
+    @IBOutlet private weak var imageView: UIImageView! //yemek resmi
+    @IBOutlet private weak var pieceLabel: UILabel! //yemek adedi
+    @IBOutlet private weak var nameLabel: UILabel! //yemek ismi
+    @IBOutlet private weak var totalPriceLabel: UILabel! //toplam fiyat
     
     var food: Foods? //Model Foods dosyasına köprü
     private var piece = 1
@@ -32,7 +32,7 @@ class FoodDetailViewController: UIViewController {
         totalPriceLabel.text = "\(String(piece * Int(food!.yemek_fiyat)!)) ₺"
     }
     
-    @IBAction func minusPlusButton(_ sender: UIButton) { //Detay'daki ürün adedi eksiltme artırma butonu
+    @IBAction private func minusPlusButton(_ sender: UIButton) { //Detay'daki ürün adedi eksiltme artırma butonu
         if sender.tag == 0 {
             if piece > 0{
                 piece -= 1
@@ -45,7 +45,7 @@ class FoodDetailViewController: UIViewController {
     }
     
     
-    @IBAction func addCartButton(_ sender: UIButton) { //Detay'daki sepete ekle butonu
+    @IBAction private func addCartButton(_ sender: UIButton) { //Detay'daki sepete ekle butonu
         viewModel.addCart(yemek_adi: food!.yemek_adi, yemek_resim_adi: food!.yemek_resim_adi, yemek_fiyat: Int(food!.yemek_fiyat)!, yemek_siparis_adet: piece, kullanici_adi: "resedat") { _ in
             let alert = UIAlertController(title: "Sepet İşlemi", message: "Ürün başarıyla sepete eklendi.", preferredStyle: .alert)
             let okeyAction = UIAlertAction(title: "Tamam", style: .cancel)

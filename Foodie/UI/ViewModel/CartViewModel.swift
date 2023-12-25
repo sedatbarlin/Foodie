@@ -11,12 +11,11 @@ import RxSwift
 
 //MARK: Sepet ekranı görünümü için repo'dan çağırılacak fonksiyonlar
 
-class CartViewModel{
-    let repository = FoodsDaoRepository()
+final class CartViewModel{
+    private let repository = FoodsDaoRepository()
     var foodList = BehaviorSubject<[CartFoods]>(value: [CartFoods]())
     var totalPrice = BehaviorSubject<Int>(value: Int())
 
-    
     init() {
         foodList = repository.cartFoodsList
         totalPrice = repository.totalPrice

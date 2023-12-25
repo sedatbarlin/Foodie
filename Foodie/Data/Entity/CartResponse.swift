@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CartResponse: Codable{ //Codable: JSON cevabını liste olarak alma
+final class CartResponse: Codable{ //Codable: JSON cevabını liste olarak alma
     var success: Int?
     var message: String?
 }

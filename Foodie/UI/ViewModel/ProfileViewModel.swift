@@ -10,7 +10,7 @@ import FirebaseAuth
 
 //MARK: Profil sayfası için gerekli olan array içeriği, hesaptan çıkış ve kullanıcı adı getirme
 
-class ProfileViewModel { //Profile TableView'da içerik olarak görüntülenecek kısımlar
+final class ProfileViewModel { //Profile TableView'da içerik olarak görüntülenecek kısımlar
     var userItems: [String] = [
         "Hesabın","Gizlilik","Premium","Güvenlik","Proxy","Çıkış Yap"
     ]

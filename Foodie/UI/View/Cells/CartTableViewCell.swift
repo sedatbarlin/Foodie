@@ -9,7 +9,7 @@ import UIKit
 
 //MARK: Sepetteki tableview'da listelenen öğelerin bilgileri
 
-class CartTableViewCell: UITableViewCell {
+final class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var foodImageView: UIImageView!
     @IBOutlet weak var foodNameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!

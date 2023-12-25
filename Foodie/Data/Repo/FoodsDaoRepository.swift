@@ -14,7 +14,7 @@ import FirebaseAuth
 
 //MARK: REPO işlemleri
 
-class FoodsDaoRepository {
+final class FoodsDaoRepository {
     var foodList = BehaviorSubject<[Foods]>(value: [Foods]())
     var cartFoodsList = BehaviorSubject<[CartFoods]>(value: [CartFoods]())
     var totalPrice = BehaviorSubject<Int>(value: Int())
@@ -201,7 +201,7 @@ class FoodsDaoRepository {
     }
     
     //MARK: Kullanıcı bilgilerinin Firestore service'den çekme
-    func fetchUserData(completion: @escaping (Users) -> Void) {
+    private func fetchUserData(completion: @escaping (Users) -> Void) {
         let myUsers = Firestore.firestore()
         if let user = Auth.auth().currentUser {
             let userCollection = myUsers.collection("Users").document(user.uid).collection(user.email!).document("UserInfo")

@@ -11,12 +11,12 @@ import UIKit
 
 //MARK: Anasayfa görünümü için repo'dan çağırılacak fonksiyonlar
 
-class HomeViewModel{
-    let repository = FoodsDaoRepository() //köprü
+final class HomeViewModel{
+    private let repository = FoodsDaoRepository() //köprü
     //BehaviorSubject RXSwift ile çalışan veri aktarımına ve yüklemeye yardımcı bir nesne
     var foodList = BehaviorSubject<[Foods]>(value: [Foods]())
-    var orderQuantity = BehaviorSubject<Int>(value: 1)
-    var cartFoodList = BehaviorSubject<[CartFoods]>(value: [CartFoods]())
+    private var orderQuantity = BehaviorSubject<Int>(value: 1)
+    private var cartFoodList = BehaviorSubject<[CartFoods]>(value: [CartFoods]())
     
     //pdf'deki ürünlerin ID'lerine göre sıralandı
     let drinks = ["1", "3", "7", "12"]
@@ -38,7 +38,7 @@ class HomeViewModel{
     func segmentedFoodList(idList: [String]){ //segment kontrolü ve kategorileme repo dan çağırılması
         repository.categorizedList(listContens: idList)
     }
-    func uploadFoods(){ // yemekleri güncelleme repodan çağırma
+    private func uploadFoods(){ // yemekleri güncelleme repodan çağırma
         repository.loadFoods()
     }
 }

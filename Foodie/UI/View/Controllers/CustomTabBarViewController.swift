@@ -9,12 +9,12 @@ import UIKit
 
 //MARK: TabBar öğemin tasarlanması
 
-class CustomTabBarViewController: UIViewController {
-    @IBOutlet weak var bottomTabView: UIView?
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet var selectedStateViews: [UIView]?
+final class CustomTabBarViewController: UIViewController {
+    @IBOutlet private weak var bottomTabView: UIView?
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private var selectedStateViews: [UIView]?
     
-    var main: UIStoryboard{
+    private var main: UIStoryboard{
         return UIStoryboard(name: "Main", bundle: nil)
     }
     
@@ -27,7 +27,7 @@ class CustomTabBarViewController: UIViewController {
         handleConstraint(controller)
     }
     
-    @IBAction func tabTapped(_ sender: UIButton) { //Tabbar'da bulunan 3 öğenin tıklanma özellikleri
+    @IBAction private func tabTapped(_ sender: UIButton) { //Tabbar'da bulunan 3 öğenin tıklanma özellikleri
         var controller: UIViewController!
         let tag = sender.tag
         //handle view bottom
@@ -43,7 +43,7 @@ class CustomTabBarViewController: UIViewController {
         handleConstraint(controller)
     }
     
-    func handleConstraint(_ controller: UIViewController){
+    private func handleConstraint(_ controller: UIViewController){
         addChild(controller)
         containerView.addSubview(controller.view)
         controller.view.translatesAutoresizingMaskIntoConstraints = false
@@ -54,7 +54,7 @@ class CustomTabBarViewController: UIViewController {
     }
     
     //views
-    func handleSelectedViews(current state: Int){
+    private func handleSelectedViews(current state: Int){
         selectedStateViews?.forEach(){ selectedView in
             selectedView.isHidden = (selectedView.tag != state)
         }
