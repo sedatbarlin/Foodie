@@ -23,6 +23,7 @@
 - Listing the user transactions page with UITableView
 - Add to cart, delete from cart, view detail operations
 - In all transactions, alerting the user and requesting approval with UIAlertController
+- Extensions and SOLID principles were tried to be implemented
   
 ## 📸 Screenshots
 
