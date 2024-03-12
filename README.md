@@ -8,7 +8,7 @@
 - RxSwift
 - FirebaseFirestore
 - FirebaseAuth
-- FirebaseStorage
+- FirebaseStorage 
 - Alamofire
 - KingFisher 
   
