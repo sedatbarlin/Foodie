@@ -6,7 +6,7 @@
 - MVVM 
 - UIKit
 - RxSwift
-- FirebaseFirestore
+- FirebaseFirestore 
 - FirebaseAuth 
 - FirebaseStorage 
 - Alamofire
