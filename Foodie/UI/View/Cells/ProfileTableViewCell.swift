@@ -8,7 +8,7 @@
 import UIKit
 
 //MARK: Kullanıcı tableview'da cell içerisinde bulunan label ve seçili öğe işlemi
-
+ 
 final class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var cellLabel: UILabel!
     
