@@ -7,7 +7,7 @@
 
 import UIKit
 import Kingfisher
-
+ 
 //MARK: Anasayfa'da üzerine basılınca açılan Detay ekranının özellikleri
 
 final class FoodDetailViewController: UIViewController {
