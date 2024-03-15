@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-//MARK: Sepet Ekranı özellikleri
+//MARK: Sepet Ekranı özellikleri 
 
 final class CartViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
