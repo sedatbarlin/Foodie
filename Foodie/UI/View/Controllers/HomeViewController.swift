@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 //MARK: Anasayfadaki öğelerin bağlanması ve köprülerin kurulması
-
+ 
 final class HomeViewController: UIViewController{
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
