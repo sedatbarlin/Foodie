@@ -5,7 +5,7 @@
 //  Created by Sedat on 16.12.2023.
 //
 
-import UIKit
+import UIKit 
 
 //MARK: Sepetteki tableview'da listelenen öğelerin bilgileri
 
