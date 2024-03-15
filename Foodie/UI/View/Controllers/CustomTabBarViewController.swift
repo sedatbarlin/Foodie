@@ -7,7 +7,7 @@
 
 import UIKit
 
-//MARK: TabBar öğemin tasarlanması
+//MARK: TabBar öğemin tasarlanması 
 
 final class CustomTabBarViewController: UIViewController {
     @IBOutlet private weak var bottomTabView: UIView?
