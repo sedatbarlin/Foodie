@@ -4,7 +4,7 @@
 //
 //  Created by Sedat on 15.12.2023.
 //
-
+ 
 import Foundation
 
 final class CartFoods: Codable{ //Codable: JSON cevabını liste olarak alma (özel model)
