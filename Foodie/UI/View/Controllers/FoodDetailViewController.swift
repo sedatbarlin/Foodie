@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
  
-//MARK: Anasayfa'da üzerine basılınca açılan Detay ekranının özellikleri
+//MARK: Anasayfa'da üzerine basılınca açılan Detay ekranının özellikleri 
 
 final class FoodDetailViewController: UIViewController {
     @IBOutlet private weak var imageView: UIImageView! //yemek resmi
