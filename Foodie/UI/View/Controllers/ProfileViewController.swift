@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 
-//MARK: Kullanıcı profil ekranı özellikleri ve alert'lar 
+//MARK: Kullanıcı profil ekranı özellikleri ve alert'lar  
 
 final class ProfileViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
