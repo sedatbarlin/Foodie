@@ -11,7 +11,7 @@ import FirebaseAuth
 //MARK: Kullanıcı kaydı için Auth kullanılması (check) işlemi ve giriş ekranına yönlendirme
  
 final class SignUpViewController: UIViewController {
-    @IBOutlet private weak var mailTextField: UITextField!
+    @IBOutlet private weak var mailTextField: UITextField! 
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var signUpButton: UIButton!
     @IBOutlet private weak var showpasswordButton: UIButton!
