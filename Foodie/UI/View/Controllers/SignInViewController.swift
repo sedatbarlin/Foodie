@@ -7,7 +7,7 @@
  
 import UIKit
 import FirebaseAuth
-
+ 
 //MARK: Kullanıcı girişi için Auth kullanılması (check) işlemi ve kayıt ekranına yönlendirme
 
 final class SignInViewController: UIViewController {
