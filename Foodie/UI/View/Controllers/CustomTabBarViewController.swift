@@ -5,7 +5,7 @@
 //  Created by Sedat on 15.12.2023.
 //
 
-import UIKit
+import UIKit 
 
 //MARK: TabBar öğemin tasarlanması 
 
