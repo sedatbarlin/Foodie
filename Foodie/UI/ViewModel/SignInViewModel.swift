@@ -7,7 +7,7 @@
 
 import Foundation
 import FirebaseAuth
-
+ 
 //MARK: Giriş ekranı için repodan func çekme ve giriş metodu oluşturma
 
 final class SignInViewModel{
