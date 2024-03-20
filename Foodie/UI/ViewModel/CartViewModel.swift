@@ -10,7 +10,7 @@ import UIKit
 import RxSwift 
 
 //MARK: Sepet ekranı görünümü için repo'dan çağırılacak fonksiyonlar
-
+ 
 final class CartViewModel{
     private let repository = FoodsDaoRepository()
     var foodList = BehaviorSubject<[CartFoods]>(value: [CartFoods]())
