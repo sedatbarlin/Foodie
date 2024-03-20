@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import FirebaseAuth
+import FirebaseAuth 
 
 //MARK: Kayıt ekranı için repodan func çekme ve kayıt metodu oluşturma
 
