@@ -6,7 +6,7 @@
 //
 
 import UIKit  
-import RxSwift
+import RxSwift 
 
 //MARK: Sepet Ekranı özellikleri 
 
