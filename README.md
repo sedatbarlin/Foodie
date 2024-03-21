@@ -1,7 +1,7 @@
 <h1 align="center"> 🍴 Foodie 🍴 </h1>
 <h4 align="center"> Techcareer iOS Developer Bootcamp Graduation Project, Food application with MVVM 🎈 <h4>
 
-## :fire: Implemented Using
+## :fire: Implemented Using 
   
 - MVVM 
 - UIKit
