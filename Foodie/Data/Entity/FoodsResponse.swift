@@ -9,5 +9,5 @@ import Foundation
  
 final class FoodsResponse: Codable{ //Codable: JSON cevabını liste olarak alma
     var yemekler: [Foods]?
-    var success :Int?
+    var success :Int? 
 }
