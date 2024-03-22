@@ -13,6 +13,6 @@ final class Users { //Codable: JSON cevabını liste olarak alma (özel model)
      
     init(email: String, password: String) {
         self.email = email
-        self.password = password
+        self.password = password 
     }
 }
