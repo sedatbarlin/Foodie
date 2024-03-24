@@ -5,7 +5,7 @@
 //  Created by Sedat on 16.12.2023.
 //
 
-import Foundation
+import Foundation 
 import FirebaseAuth 
 
 //MARK: Kayıt ekranı için repodan func çekme ve kayıt metodu oluşturma
