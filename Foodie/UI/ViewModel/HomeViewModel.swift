@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 import UIKit 
-
+ 
 //MARK: Anasayfa görünümü için repo'dan çağırılacak fonksiyonlar
 
 final class HomeViewModel{
