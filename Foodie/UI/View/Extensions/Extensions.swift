@@ -8,7 +8,7 @@
 import Foundation
 import UIKit 
  
-//MARK: Home CollectionView (collectionview'da ürünlerin listelenmesi ve sepete ekleme işlemi)
+//MARK: Home CollectionView (collectionview'da ürünlerin listelenmesi ve sepete ekleme işlemi) 
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
