@@ -10,7 +10,7 @@ import FirebaseAuth
  
 //MARK: Giriş ekranı için repodan func çekme ve giriş metodu oluşturma
 
-final class SignInViewModel{
+final class SignInViewModel{ 
     private let repository = FoodsDaoRepository()
     func signIn(email: String, password: String, completion: @escaping (Error?) -> Void) {
         repository.signIn(email: email, password: password) { error in
