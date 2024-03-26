@@ -5,7 +5,7 @@
 //  Created by Sedat on 18.12.2023.
 //
  
-import Foundation
+import Foundation 
 
 final class Users { //Codable: JSON cevabını liste olarak alma (özel model)
     let email: String 
