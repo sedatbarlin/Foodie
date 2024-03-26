@@ -5,7 +5,7 @@
 //  Created by Sedat on 15.12.2023.
 //
 
-import Foundation  
+import Foundation   
  
 final class Foods: Codable{ //Codable: JSON cevabını liste olarak alma (özel model)
     let yemek_id: String 
