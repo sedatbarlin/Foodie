@@ -7,7 +7,7 @@
  
 import Foundation 
 import RxSwift 
-import Alamofire   
+import Alamofire    
 import UIKit 
 import FirebaseFirestore
 import FirebaseAuth
