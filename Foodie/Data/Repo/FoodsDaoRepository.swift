@@ -12,7 +12,7 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth 
 
-//MARK: REPO işlemleri
+//MARK: REPO işlemleri 
 
 final class FoodsDaoRepository {
     var foodList = BehaviorSubject<[Foods]>(value: [Foods]())
