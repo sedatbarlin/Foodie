@@ -11,7 +11,7 @@ import Alamofire
 import UIKit 
 import FirebaseFirestore
 import FirebaseAuth 
-
+ 
 //MARK: REPO işlemleri 
 
 final class FoodsDaoRepository {
