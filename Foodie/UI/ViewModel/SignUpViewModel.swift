@@ -8,7 +8,7 @@
 import Foundation 
 import FirebaseAuth   
 
-//MARK: Kayıt ekranı için repodan func çekme ve kayıt metodu oluşturma
+//MARK: Kayıt ekranı için repodan func çekme ve kayıt metodu oluşturma 
 
 final class SignUpViewModel{
     private let repository = FoodsDaoRepository()
