@@ -6,7 +6,7 @@
 //
  
 import Foundation   
-import UIKit
+import UIKit 
 import RxSwift 
  
 //MARK: Detay sayfa görünümü için repo'dan çağırılacak addCart fonksiyonu    
