@@ -10,7 +10,7 @@ import RxSwift
 import UIKit  
  
 //MARK: Anasayfa görünümü için repo'dan çağırılacak fonksiyonlar  
-
+ 
 final class HomeViewModel{
     private let repository = FoodsDaoRepository() //köprü
     //BehaviorSubject RXSwift ile çalışan veri aktarımına ve yüklemeye yardımcı bir nesne
