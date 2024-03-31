@@ -9,7 +9,7 @@ import Foundation
 import RxSwift 
 import Alamofire     
 import UIKit 
-import FirebaseFirestore
+import FirebaseFirestore 
 import FirebaseAuth  
   
 //MARK: REPO işlemleri 
