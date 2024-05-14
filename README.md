@@ -4,7 +4,7 @@
 ## :fire: Implemented Using 
   
 - MVVM 
-- UIKit
+- UIKit 
 - RxSwift  
 - FirebaseFirestore 
 - FirebaseAuth   
