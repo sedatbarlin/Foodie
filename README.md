@@ -14,7 +14,7 @@
    
 ## :rocket: Features
 
-- Registering and logging into the application with FirebasAuth
+- Registering and logging into the application with FirebasAuth 
 - Fetching and listing the contents of the pages via API layout
 - Separating content into groups with UISegmentedControl
 - Searching content by word with UISearchBar
