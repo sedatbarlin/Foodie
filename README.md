@@ -10,7 +10,7 @@
 - FirebaseAuth  
 - FirebaseStorage  
 - Alamofire
-- KingFisher 
+- KingFisher  
   
 ## :rocket: Features
 
