@@ -7,7 +7,7 @@
 - UIKit
 - RxSwift 
 - FirebaseFirestore 
-- FirebaseAuth  
+- FirebaseAuth   
 - FirebaseStorage  
 - Alamofire
 - KingFisher  
